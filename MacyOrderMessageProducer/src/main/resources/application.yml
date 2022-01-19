@@ -1,0 +1,13 @@
+server:
+  port: 8080
+spring:
+  application:
+     name: producer-service  datasource:    url: jdbc:mysql://localhost:3306/producer-data
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+  jpa:    hibernate.ddl-auto: update
+    properties:         hibernate:
+            dialect: org.hibernate.dialect.MySQL8Dialect
+        
+  
