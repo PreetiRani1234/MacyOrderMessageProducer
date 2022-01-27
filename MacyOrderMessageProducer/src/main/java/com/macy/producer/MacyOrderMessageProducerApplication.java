@@ -3,11 +3,14 @@ package com.macy.producer;
 
 import java.util.ArrayList;
 
+import javax.sql.DataSource;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.TopicExchange;
+import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -25,6 +28,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
+@EnableRabbit
 public class MacyOrderMessageProducerApplication {
 	
 	
@@ -43,7 +47,7 @@ public class MacyOrderMessageProducerApplication {
 			      "http://gpl.com",
 			      new ArrayList<VendorExtension>());
 	}
-	
+
 	
 	@Bean
 	public Docket getCustomizedDocket() {
